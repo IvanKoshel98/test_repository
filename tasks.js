@@ -67,7 +67,7 @@ TASK4
 */
 
 /**
- * Функция усечения строки по заданной длине
+ * Функция окрукления элементов массива методами Math
  * @param {Array<number>}  array  массив чисел
  * @param {string} metodMath метод Math для округления элементов массива
  * @return {Array|null}
@@ -84,9 +84,25 @@ const /** Array<number>*/arrayForTest4 = [1.25, 5.36, 9.56, 9.45, -8.36]
 // console.log(roundArrayElements(arrayForTest4, 'ceil'))
 // console.log(roundArrayElements(arrayForTest4, 'floor'))
 
-function isBigEnough(element) {
-    return element >= 10;
+
+/*
+TASK5
+Написать функцию, которая исключает из массива все "не числа".
+1. Обрабатываемый массив.
+*/
+
+/**
+ * Функция  исключает из массива все "не числа"
+ * @param {Array<number>}  array  смешанный массив
+ * @return {Array<number>}
+ */
+const removeNonNumbersFromArray = (array) => {
+    return array.reduce((returnArray,currentItem) =>{
+        if(typeof currentItem == 'number' && !isNaN(currentItem)) returnArray.push(currentItem)
+        return returnArray
+    } ,[]
+    )
 }
 
-console.log([12, 5, 8, 130, 44].every(isBigEnough));   // false
-console.log([12, 54, 18, 130, 44].every(isBigEnough)); // true
+const /** Array*/mixedArray = [1, 2, null, NaN, 'qwerty', 3, NaN, 'null', '4', 5]
+console.log(removeNonNumbersFromArray(mixedArray))
