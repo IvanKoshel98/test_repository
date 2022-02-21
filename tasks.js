@@ -93,7 +93,7 @@ TASK5
 
 /**
  * Функция  исключает из массива все "не числа"
- * @param {Array<number>}  array  смешанный массив
+ * @param {Array<>}  array  смешанный массив
  * @return {Array<number>}
  */
 const removeNonNumbersFromArray = (array) => {
