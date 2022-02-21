@@ -51,7 +51,7 @@ TASK3
  */
 const truncatString = (str, maxLength) => {
     return str.length > maxLength ?
-        str.substr(str, maxLength - 1).concat('…')
+        str.substr(0, maxLength - 1).concat('…')
         :
         str;
 }
@@ -69,12 +69,12 @@ TASK4
 /**
  * Функция окрукления элементов массива методами Math
  * @param {Array<number>}  array  массив чисел
- * @param {string} metodMath метод Math для округления элементов массива
+ * @param {string} methodMath метод Math для округления элементов массива
  * @return {Array|null}
  */
-const roundArrayElements = (array, metodMath) => {
-    return (metodMath in Math) ?
-        array.map(Math[metodMath])
+const roundArrayElements = (array, methodMath) => {
+    return (methodMath in Math) ?
+        array.map(Math[methodMath])
         :
         null
 }
